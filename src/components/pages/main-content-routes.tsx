@@ -1,13 +1,13 @@
-import CarList from './cars/car-list';
-import { Home } from './home';
+import CarList from './cars/car-list'
+import { Home } from './home'
 
 export const mainContentRoutes = [
   {
-    path: "/",
+    path: '/',
     element: <Home />,
   },
-    {
-      path: "/cars",
-      element: <CarList />,
-    },
-  ];
+  {
+    path: '/cars',
+    element: <CarList />,
+  },
+]

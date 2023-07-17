@@ -1,20 +1,13 @@
-import { useState } from 'react';
-import {
-  AppShell,
-  Header,
-  Text,
-  MediaQuery,
-  Burger,
-  useMantineTheme,
-} from '@mantine/core';
+import { useState } from 'react'
+import { AppShell, Header, Text, MediaQuery, Burger, useMantineTheme } from '@mantine/core'
 
 import './App.css'
-import { LeftNav } from './components/pages/left-nav';
-import { Outlet } from 'react-router-dom';
+import { LeftNav } from './components/pages/left-nav'
+import { Outlet } from 'react-router-dom'
 
 function App() {
-  const theme = useMantineTheme();
-  const [opened, setOpened] = useState(false);
+  const theme = useMantineTheme()
+  const [opened, setOpened] = useState(false)
   return (
     <AppShell
       styles={{
@@ -24,9 +17,7 @@ function App() {
       }}
       navbarOffsetBreakpoint="sm"
       asideOffsetBreakpoint="sm"
-      navbar={
-        <LeftNav opened={opened}/>
-      }
+      navbar={<LeftNav opened={opened} />}
       // aside={
       //   <MediaQuery smallerThan="sm" styles={{ display: 'none' }}>
       //     <Aside p="md" hiddenBreakpoint="sm" width={{ sm: 200, lg: 300 }}>
@@ -58,7 +49,7 @@ function App() {
     >
       <Outlet />
     </AppShell>
-  );
+  )
 }
 
-export default App;
+export default App

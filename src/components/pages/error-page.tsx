@@ -1,17 +1,16 @@
-import { useRouteError, isRouteErrorResponse } from "react-router-dom";
+import { useRouteError, isRouteErrorResponse } from 'react-router-dom'
 
 export default function ErrorPage() {
-  const error = useRouteError();
-  console.error(error);
+  const error = useRouteError()
+  console.error(error)
 
-  let statusText = 'unknown';
-  let message = 'unknown';
+  let statusText = 'unknown'
+  let message = 'unknown'
 
   if (isRouteErrorResponse(error)) {
-    statusText = error.statusText;
-    message = error.error ? error.error.message : 'unknown';
+    statusText = error.statusText
+    message = error.error ? error.error.message : 'unknown'
   }
-  
 
   return (
     <div id="error-page">
@@ -21,5 +20,5 @@ export default function ErrorPage() {
         <i>{statusText || message}</i>
       </p>
     </div>
-  );
+  )
 }

@@ -1,6 +1,6 @@
-import { useState } from 'react';
-import { createStyles, Navbar, getStylesRef, rem } from '@mantine/core';
-import { useNavigate } from "react-router-dom";
+import { useState } from 'react'
+import { createStyles, Navbar, getStylesRef, rem } from '@mantine/core'
+import { useNavigate } from 'react-router-dom'
 // import {
 //   IconBellRinging,
 //   IconFingerprint,
@@ -18,17 +18,13 @@ const useStyles = createStyles((theme) => ({
   header: {
     paddingBottom: theme.spacing.md,
     marginBottom: `calc(${theme.spacing.md} * 1.5)`,
-    borderBottom: `${rem(1)} solid ${
-      theme.colorScheme === 'dark' ? theme.colors.dark[4] : theme.colors.gray[2]
-    }`,
+    borderBottom: `${rem(1)} solid ${theme.colorScheme === 'dark' ? theme.colors.dark[4] : theme.colors.gray[2]}`,
   },
 
   footer: {
     paddingTop: theme.spacing.md,
     marginTop: theme.spacing.md,
-    borderTop: `${rem(1)} solid ${
-      theme.colorScheme === 'dark' ? theme.colors.dark[4] : theme.colors.gray[2]
-    }`,
+    borderTop: `${rem(1)} solid ${theme.colorScheme === 'dark' ? theme.colors.dark[4] : theme.colors.gray[2]}`,
   },
 
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
@@ -68,7 +64,7 @@ const useStyles = createStyles((theme) => ({
       },
     },
   },
-}));
+}))
 
 // const data = [
 //   { link: '', label: 'Notifications', icon: IconBellRinging },
@@ -81,19 +77,19 @@ const useStyles = createStyles((theme) => ({
 // ];
 
 const data = [
-    { link: '/', label: 'Home',  },
-    { link: '/Cars', label: 'Cars',  },
-  ];
+  { link: '/', label: 'Home' },
+  { link: '/Cars', label: 'Cars' },
+]
 
 interface LeftNavProps {
-    opened: boolean;
+  opened: boolean
 }
 
-export const LeftNav = ({opened}: LeftNavProps) => {
-    const navigate = useNavigate();
+export const LeftNav = ({ opened }: LeftNavProps) => {
+  const navigate = useNavigate()
 
-  const { classes, cx } = useStyles();
-  const [active, setActive] = useState('Billing');
+  const { classes, cx } = useStyles()
+  const [active, setActive] = useState('Billing')
 
   const links = data.map((item) => (
     <a
@@ -101,21 +97,19 @@ export const LeftNav = ({opened}: LeftNavProps) => {
       href={item.link}
       key={item.label}
       onClick={(event) => {
-        event.preventDefault();
-        setActive(item.label);
+        event.preventDefault()
+        setActive(item.label)
         navigate(item.link)
       }}
     >
       {/* <item.icon className={classes.linkIcon} stroke={1.5} /> */}
       <span>{item.label}</span>
     </a>
-  ));
+  ))
 
   return (
     <Navbar p="md" hiddenBreakpoint="sm" hidden={!opened} width={{ sm: 200, lg: 300 }}>
-      <Navbar.Section grow>
-        {links}
-      </Navbar.Section>
+      <Navbar.Section grow>{links}</Navbar.Section>
     </Navbar>
-  );
+  )
 }
