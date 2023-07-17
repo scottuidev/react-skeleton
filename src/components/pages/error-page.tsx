@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
 import { useRouteError, isRouteErrorResponse } from "react-router-dom";
 
 export default function ErrorPage() {
